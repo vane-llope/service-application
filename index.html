@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="affordable and profassional web design">
+    <meta name="keywords" content="web design,html,css,affordable web design,profasional web design">
+    <meta name="author" content="zahra sayahi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>zara-password-generator</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="showcase">
+            <img src="./assets/images/giant-whale-in-ocean-uv6rf7xzskyatnfw.jpg" alt="">
+        </div >
+        <div class="topNav">
+            <div style="display: flex; ">
+                <a href="#" class="btn "><i class="bi bi-whatsapp"></i></a>
+                <a href="#" class="btn "><i class="bi bi-twitter"></i></a>
+                <a href="#" class="btn "><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="btn "><i class="bi bi-instagram"></i></a>
+            </div>
+            <p>{{appName}} </p>
+        </div>
+        <nav class="navbarM">
+            <div class="profileItem">
+                <a class="navbarItemM " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                    aria-controls="offcanvasExample">
+                    <i class="fa fa-user"></i><span>Profile</span>
+                </a>
+            </div>
+            <div class="tube"></div>
+            <ul class="navbarMenuM">
+
+                <li class="navbarItemM" @click="meli">
+                    <i class="fa fa-address-card"></i><span>Identity</span>
+                </li>
+                <li class="navbarItemM" @click="number">
+                    <i class="fa fa-font"></i><span>letters</span>
+                </li>
+                <li class="navbarItemM" @click="password">
+                    <i class="fa fa-key"></i><span>password</span>
+                </li>
+                <li class="navbarItemM" @click="engToPer">
+                    <i class="fa fa-language"></i><span>numbers</span>
+                </li>
+                <a type="button" class="navbarItemM" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+                    data-bs-whatever="@mdo">
+                    <i class="fa fa-envelope"></i><span>message</span>
+                </a>
+            </ul>
+        </nav>
+        <component v-bind:is="choosen"></component>
+        <!--message-->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Email:</label>
+                                <input type="email" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Send message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--side-profile Info-->
+        <div class="offcanvas offcanvas-start" tabindex="-1" style="width: 350px; transition: 1.1s;"
+            id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">settings</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!--B1-->
+                <button type="button" style="background: none;  border: none;" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
+                    <img :src="image" @click="changephoto" alt="Norway" class="avatar"></button>
+                <i style="margin: 0 4.5%;">tap avatar to edit your info</i>
+            </br>
+        </br>
+                <a class="btn " style="margin-bottom: 1%;" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                    your information
+                </a>
+                <div class="collapse" id="collapseExample2">
+                    <div style="display: flex;flex-direction: column; margin-bottom: 2%;">
+                        </br>
+                        <label for="inputPassword5" class="form-label">{{name}}</label>
+                        </br>
+                        <label for="inputPassword5" class="form-label">{{Bio}}</label>
+                        </br>
+                        <label for="inputPassword5" class="form-label">{{phoneNumber}}</label>
+                    </div>
+                </div>
+
+                <!--B2,3-->
+                </br>
+                <a type="button" class="btn" style="margin-bottom: 1%;" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal3">
+                    about us
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">About me</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="about">
+                                    <p>زهرا سیاحی</p>
+                                    <p>دانشجوی رشته ی مهندسی کامپوتر</p>
+                                    <p>مهندسی نرم افزار</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </br>
+                <a class="btn " style="margin-bottom: 1%;"> contact us :</a>
+                <!--footer-->
+                </br>
+                <div style="display: flex; ">
+                    <a href="#" class="btn "><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="btn "><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="btn "><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="btn "><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+            <!--input form-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">your account</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 3%;">
+                                    <img :src="image" alt="Norway" class="avatar">
+                                    <div class="input-group mb-3" style="width: 70%; margin-top: 5%;">
+                                        <input type="file" class="form-control" style="height: 38px;" v-model="image"
+                                            id="inputGroupFile02">
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px;">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" v-model="name"
+                                            placeholder="name@example.com">
+                                        <label for="floatingInput">User name</label>
+                                    </div>
+                                    <div class="form-floating " style="margin-bottom: 3%;">
+                                        <textarea class="form-control" v-model="Bio" maxlength="25"
+                                            placeholder="Leave a comment here" id="floatingTextarea2"
+                                            style="height: 100px"></textarea>
+                                        <label for="floatingTextarea2">Bio</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" v-model="phoneNumber" id="floatingInput"
+                                            placeholder="name@example.com">
+                                        <label for="floatingInput">phoneNumber</label>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/script/main.js"> </script>
+    <script src="./assets/components/passwordGenerator.js"></script>
+    <script src="./assets/components/numToLetter.js"></script>
+    <script src="./assets/components/melicode.js"></script>
+    <script src="./assets/components/engToPer.js"></script>
+    <script>
+        const mountedApp = app.mount('#app');
+        const items = document.querySelectorAll("nav ul li");
+        const tube = document.querySelector("nav .tube");
+        items.forEach(item => {
+            item.addEventListener("click", () => {
+                items.forEach(i => i.style.color = "#000");
+                item.style.color = '000'
+                tube.style.top = `${item.offsetTop}px`;
+            })
+        });
+    </script>
+</body>
+
+</html>
