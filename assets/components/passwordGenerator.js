@@ -3,37 +3,37 @@ app.component('password-generator', {
         /*html*/
         `  <div class="containerG">
         <div class="inerContainer">        
-        <h1><strong>Password Generator</strong></h1>
+        <h1><strong>پسورد تصادفی</strong></h1>
 
         <div class="resultPG">
             <p>{{result}}</p>
         </div>
         <div class="options">
+        <input class="inputLength" type="number" id="length" min='4' max='20' v-model="length"/>
             <label>طول پسورد</label>
-            <input class="inputLength" type="number" id="length" min='4' max='20' v-model="length"/>
         </div>
         <div class="options">
+        <input type="checkbox" class="form-check-input"  checked v-model="checkedLowercase">
+     
             <label> شامل حروف کوچک بشود</label>
-            <input type="checkbox" class="form-check-input"  checked v-model="checkedLowercase">
-        </div>
+         </div>
         <div class="options">
-            <label> شامل حروف بزرگ بشود</label>
-            <input type="checkbox"class="form-check-input"  checked v-model="checkedUppercase">
-
+        <input type="checkbox"class="form-check-input"  checked v-model="checkedUppercase">
+            <label> شامل حروف بزرگ بشود</label>     
         </div>
 
-        <div class="options">
+        <div class="options">   
+          <input type="checkbox" class="form-check-input"  checked v-model="checkedNumbers">
             <label>شامل عدد بشود</label>
-            <input type="checkbox" class="form-check-input"  checked v-model="checkedNumbers">
-        </div>
+          </div>
         <div class="options">
+        <input type="checkbox" class="form-check-input"  checked v-model="checkedSymbols">  
             <label> شامل نشانه ها بشود</label>
-            <input type="checkbox" class="form-check-input"  checked v-model="checkedSymbols">
-        </div>
+         </div>
         <button class="btnPG" id="generate" @click="Generate">
             تایید
         </button>
-        <button type="button" class="btnPG">downloa<i class="fab fa-github"></i></button>
+        <a type="button" class="btnPG">download   <i class="fab fa-github"></i></a>
         </div>
         
     </div>`,

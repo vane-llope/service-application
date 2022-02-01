@@ -2,7 +2,7 @@ app.component('pn-to-eng', {
   template:
         /*html*/`<div class="containerCM containerG">
         <div class="inerContainer"> 
-        <h2 > تبدیل عدد فارسی و انگلیسی </h2>
+        <h1> تبدیل عدد فارسی و انگلیسی </h1>
         <input type="text" placeholder="عدد فارسی" v-model="numberPE">
         <div>
         <div class="resultPG">
@@ -10,7 +10,7 @@ app.component('pn-to-eng', {
         </div>
           <button type="button" class="btnPG" @click="assign">تایید</button>
         </div>
-        <button type="button" class="btnPG">download <i class="fab fa-github"></i></button>
+        <a type="button" class="btnPG">download<i class="fab fa-github"></i></a>
         </div>
         
       </div>`,

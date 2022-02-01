@@ -2,13 +2,13 @@ const app=Vue.createApp({
     data:function(){
       return{
         choosen: '',
-        appName:'firstApp',
-        name:'yourName',
+        appName:'App_service',
+      /*  name:'yourName',
         Bio:'your Bio',
         phoneNumber:'123456789',
         image:'./assets/images/oled-abstract-people-jsnzks1b36a58xfx.jpg',
         backgroundColor:'',
-        buttonColor:'',
+        buttonColor:'',*/
     }
 },
 methods:{

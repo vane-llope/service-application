@@ -3,7 +3,7 @@ app.component('number', {
         /*html*/
         ` <div class="containerCM containerG">
         <div class="inerContainer"> 
-    <h2 >تبدیل عدد به حروف</h2>
+    <h1 >تبدیل عدد به حروف</h1>
     <input type="text" placeholder="عدد را وارد کنید" v-model="number">
     <div class="resultPG">
     <p>{{resultN}}</p>
@@ -12,7 +12,7 @@ app.component('number', {
     <div>
       <button type="button" class="btnPG" @click="changeNumber">تایید</button>
     </div>
-    <button type="button" class="btnPG"> download <i class="fab fa-github"></i></button>
+    <a type="button" class="btnPG">download <i class="fab fa-github"></i></a>
     </div>
     
     </div>`,

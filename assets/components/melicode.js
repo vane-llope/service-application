@@ -4,12 +4,12 @@ app.component('meli-code', {
         `
      <div class="containerG containerCM ">
      <div class="inerContainer"> 
-                       <h2 > صحت کد ملی</h2>
+                       <h1>تشخیص صحت کد ملی</h1>
                        <input type="text" placeholder="کد خود را وارد کنید" v-model="checkedResult">
                        <div>
                          <button type="button" class="btnPG" @click="testCode">تایید</button>
                        </div>
-                       <button type="button" class="btnPG">download  <i class="fab fa-github"></i></button>
+                       <a type="button" class="btnPG">download  <i class="fab fa-github"></i></a>
                        </div>
                        
                      </div>
